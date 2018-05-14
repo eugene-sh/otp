@@ -8,5 +8,6 @@ namespace OTP.Comparer
 {
     public class Class1
     {
+
     }
 }
