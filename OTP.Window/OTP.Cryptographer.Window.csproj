@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ApplicationIcon>logcrypto-logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -93,10 +93,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_data_encryption_64_MEX_icon.ico" />
+    <Content Include="logcrypto-logo.ico" />
     <Content Include="logo.ico" />
     <None Include="Resources\search1.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OTP.Cryptographer.Model\OTP.Cryptographer.Model.csproj">
+      <Project>{78791920-5BB0-4085-825A-F0AE0C76CFDA}</Project>
+      <Name>OTP.Cryptographer.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
