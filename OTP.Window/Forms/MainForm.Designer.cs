@@ -36,30 +36,24 @@
 			this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.encryptTab = new System.Windows.Forms.TabPage();
-			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.ownKeyTextBox = new System.Windows.Forms.TextBox();
-			this.useOwnKey = new System.Windows.Forms.CheckBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.importFromFileGroupBox = new System.Windows.Forms.GroupBox();
 			this.encryptStreamButton = new System.Windows.Forms.Button();
-			this.searchSourceFileButton = new System.Windows.Forms.Button();
-			this.pathToSourceFileTextBox = new System.Windows.Forms.TextBox();
+			this.searchSourceFileToEncryptButton = new System.Windows.Forms.Button();
+			this.pathToEncryptedFileTextBox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.realTimeGroupBox = new System.Windows.Forms.GroupBox();
-			this.encryptButton = new System.Windows.Forms.Button();
+			this.encryptFromInputButton = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.encryptedTextbox = new System.Windows.Forms.TextBox();
+			this.encryptTargetTextbox = new System.Windows.Forms.TextBox();
 			this.encryptSourceTextbox = new System.Windows.Forms.TextBox();
 			this.decryptTab = new System.Windows.Forms.TabPage();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.dencryptStreamButton = new System.Windows.Forms.Button();
+			this.searchSourceFileToDencryptButton = new System.Windows.Forms.Button();
+			this.pathToDecryptedFileTextBox = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.decryptButton = new System.Windows.Forms.Button();
@@ -67,19 +61,24 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.decryptedTextbox = new System.Windows.Forms.TextBox();
 			this.decryptSourceTextbox = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.openFileDialogEncrypt = new System.Windows.Forms.OpenFileDialog();
+			this.saveFileDialogEncrypt = new System.Windows.Forms.SaveFileDialog();
+			this.openFileDialogDecrypt = new System.Windows.Forms.OpenFileDialog();
+			this.saveFileDialogDecrypt = new System.Windows.Forms.SaveFileDialog();
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.keyTextBox = new System.Windows.Forms.TextBox();
+			this.ownEncryptKeyCheckBox = new System.Windows.Forms.CheckBox();
 			this.mainMenuStrip.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.encryptTab.SuspendLayout();
-			this.groupBox4.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.importFromFileGroupBox.SuspendLayout();
 			this.realTimeGroupBox.SuspendLayout();
 			this.decryptTab.SuspendLayout();
-			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.groupBox6.SuspendLayout();
+			this.groupBox4.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mainMenuStrip
@@ -89,7 +88,7 @@
             this.помощьToolStripMenuItem});
 			this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.mainMenuStrip.Name = "mainMenuStrip";
-			this.mainMenuStrip.Size = new System.Drawing.Size(805, 24);
+			this.mainMenuStrip.Size = new System.Drawing.Size(817, 24);
 			this.mainMenuStrip.TabIndex = 0;
 			this.mainMenuStrip.Text = "menuStrip1";
 			// 
@@ -127,60 +126,29 @@
 			this.tabControl1.Controls.Add(this.encryptTab);
 			this.tabControl1.Controls.Add(this.decryptTab);
 			this.tabControl1.ItemSize = new System.Drawing.Size(389, 30);
-			this.tabControl1.Location = new System.Drawing.Point(12, 27);
+			this.tabControl1.Location = new System.Drawing.Point(18, 145);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(782, 524);
+			this.tabControl1.Size = new System.Drawing.Size(782, 420);
 			this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
 			this.tabControl1.TabIndex = 1;
 			// 
 			// encryptTab
 			// 
-			this.encryptTab.Controls.Add(this.groupBox4);
 			this.encryptTab.Controls.Add(this.groupBox3);
 			this.encryptTab.Location = new System.Drawing.Point(4, 34);
 			this.encryptTab.Name = "encryptTab";
 			this.encryptTab.Padding = new System.Windows.Forms.Padding(10);
-			this.encryptTab.Size = new System.Drawing.Size(774, 486);
+			this.encryptTab.Size = new System.Drawing.Size(774, 382);
 			this.encryptTab.TabIndex = 0;
 			this.encryptTab.Text = "Шифрование";
 			this.encryptTab.UseVisualStyleBackColor = true;
-			// 
-			// groupBox4
-			// 
-			this.groupBox4.Controls.Add(this.ownKeyTextBox);
-			this.groupBox4.Controls.Add(this.useOwnKey);
-			this.groupBox4.Location = new System.Drawing.Point(13, 13);
-			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(358, 102);
-			this.groupBox4.TabIndex = 11;
-			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Настройки";
-			// 
-			// ownKeyTextBox
-			// 
-			this.ownKeyTextBox.Location = new System.Drawing.Point(22, 53);
-			this.ownKeyTextBox.Name = "ownKeyTextBox";
-			this.ownKeyTextBox.ReadOnly = true;
-			this.ownKeyTextBox.Size = new System.Drawing.Size(308, 20);
-			this.ownKeyTextBox.TabIndex = 7;
-			// 
-			// useOwnKey
-			// 
-			this.useOwnKey.AutoSize = true;
-			this.useOwnKey.Location = new System.Drawing.Point(22, 30);
-			this.useOwnKey.Name = "useOwnKey";
-			this.useOwnKey.Size = new System.Drawing.Size(227, 17);
-			this.useOwnKey.TabIndex = 9;
-			this.useOwnKey.Text = "Использовать свой ключь шифрования";
-			this.useOwnKey.UseVisualStyleBackColor = true;
-			this.useOwnKey.CheckedChanged += new System.EventHandler(this.useOwnKey_CheckedChanged);
 			// 
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.importFromFileGroupBox);
 			this.groupBox3.Controls.Add(this.realTimeGroupBox);
-			this.groupBox3.Location = new System.Drawing.Point(13, 121);
+			this.groupBox3.Location = new System.Drawing.Point(10, 10);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(751, 359);
 			this.groupBox3.TabIndex = 10;
@@ -190,10 +158,10 @@
 			// importFromFileGroupBox
 			// 
 			this.importFromFileGroupBox.Controls.Add(this.encryptStreamButton);
-			this.importFromFileGroupBox.Controls.Add(this.searchSourceFileButton);
-			this.importFromFileGroupBox.Controls.Add(this.pathToSourceFileTextBox);
+			this.importFromFileGroupBox.Controls.Add(this.searchSourceFileToEncryptButton);
+			this.importFromFileGroupBox.Controls.Add(this.pathToEncryptedFileTextBox);
 			this.importFromFileGroupBox.Controls.Add(this.label1);
-			this.importFromFileGroupBox.Location = new System.Drawing.Point(388, 28);
+			this.importFromFileGroupBox.Location = new System.Drawing.Point(388, 26);
 			this.importFromFileGroupBox.Name = "importFromFileGroupBox";
 			this.importFromFileGroupBox.Padding = new System.Windows.Forms.Padding(5);
 			this.importFromFileGroupBox.Size = new System.Drawing.Size(359, 100);
@@ -209,22 +177,24 @@
 			this.encryptStreamButton.TabIndex = 3;
 			this.encryptStreamButton.Text = "Зашифровать";
 			this.encryptStreamButton.UseVisualStyleBackColor = true;
+			this.encryptStreamButton.Click += new System.EventHandler(this.EncryptStream);
 			// 
-			// searchSourceFileButton
+			// searchSourceFileToEncryptButton
 			// 
-			this.searchSourceFileButton.Image = global::OTP.Window.Properties.Resources.search;
-			this.searchSourceFileButton.Location = new System.Drawing.Point(323, 37);
-			this.searchSourceFileButton.Name = "searchSourceFileButton";
-			this.searchSourceFileButton.Size = new System.Drawing.Size(28, 23);
-			this.searchSourceFileButton.TabIndex = 2;
-			this.searchSourceFileButton.UseVisualStyleBackColor = true;
+			this.searchSourceFileToEncryptButton.Image = global::OTP.Window.Properties.Resources.search;
+			this.searchSourceFileToEncryptButton.Location = new System.Drawing.Point(323, 37);
+			this.searchSourceFileToEncryptButton.Name = "searchSourceFileToEncryptButton";
+			this.searchSourceFileToEncryptButton.Size = new System.Drawing.Size(28, 23);
+			this.searchSourceFileToEncryptButton.TabIndex = 2;
+			this.searchSourceFileToEncryptButton.UseVisualStyleBackColor = true;
+			this.searchSourceFileToEncryptButton.Click += new System.EventHandler(this.SearchSourceFileToEncrypt);
 			// 
-			// pathToSourceFileTextBox
+			// pathToEncryptedFileTextBox
 			// 
-			this.pathToSourceFileTextBox.Location = new System.Drawing.Point(11, 39);
-			this.pathToSourceFileTextBox.Name = "pathToSourceFileTextBox";
-			this.pathToSourceFileTextBox.Size = new System.Drawing.Size(304, 20);
-			this.pathToSourceFileTextBox.TabIndex = 1;
+			this.pathToEncryptedFileTextBox.Location = new System.Drawing.Point(11, 39);
+			this.pathToEncryptedFileTextBox.Name = "pathToEncryptedFileTextBox";
+			this.pathToEncryptedFileTextBox.Size = new System.Drawing.Size(304, 20);
+			this.pathToEncryptedFileTextBox.TabIndex = 1;
 			// 
 			// label1
 			// 
@@ -237,27 +207,27 @@
 			// 
 			// realTimeGroupBox
 			// 
-			this.realTimeGroupBox.Controls.Add(this.encryptButton);
+			this.realTimeGroupBox.Controls.Add(this.encryptFromInputButton);
 			this.realTimeGroupBox.Controls.Add(this.label3);
 			this.realTimeGroupBox.Controls.Add(this.label2);
-			this.realTimeGroupBox.Controls.Add(this.encryptedTextbox);
+			this.realTimeGroupBox.Controls.Add(this.encryptTargetTextbox);
 			this.realTimeGroupBox.Controls.Add(this.encryptSourceTextbox);
-			this.realTimeGroupBox.Location = new System.Drawing.Point(6, 28);
+			this.realTimeGroupBox.Location = new System.Drawing.Point(6, 26);
 			this.realTimeGroupBox.Name = "realTimeGroupBox";
 			this.realTimeGroupBox.Size = new System.Drawing.Size(376, 312);
 			this.realTimeGroupBox.TabIndex = 1;
 			this.realTimeGroupBox.TabStop = false;
 			this.realTimeGroupBox.Text = "Из инпутов";
 			// 
-			// encryptButton
+			// encryptFromInputButton
 			// 
-			this.encryptButton.Location = new System.Drawing.Point(12, 279);
-			this.encryptButton.Name = "encryptButton";
-			this.encryptButton.Size = new System.Drawing.Size(109, 23);
-			this.encryptButton.TabIndex = 4;
-			this.encryptButton.Text = "Зашифровать";
-			this.encryptButton.UseVisualStyleBackColor = true;
-			this.encryptButton.Click += new System.EventHandler(this.encryptButton_Click);
+			this.encryptFromInputButton.Location = new System.Drawing.Point(12, 279);
+			this.encryptFromInputButton.Name = "encryptFromInputButton";
+			this.encryptFromInputButton.Size = new System.Drawing.Size(109, 23);
+			this.encryptFromInputButton.TabIndex = 4;
+			this.encryptFromInputButton.Text = "Зашифровать";
+			this.encryptFromInputButton.UseVisualStyleBackColor = true;
+			this.encryptFromInputButton.Click += new System.EventHandler(this.EncryptFormInput);
 			// 
 			// label3
 			// 
@@ -277,13 +247,13 @@
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Исходный текст";
 			// 
-			// encryptedTextbox
+			// encryptTargetTextbox
 			// 
-			this.encryptedTextbox.Location = new System.Drawing.Point(11, 176);
-			this.encryptedTextbox.Multiline = true;
-			this.encryptedTextbox.Name = "encryptedTextbox";
-			this.encryptedTextbox.Size = new System.Drawing.Size(350, 97);
-			this.encryptedTextbox.TabIndex = 1;
+			this.encryptTargetTextbox.Location = new System.Drawing.Point(11, 176);
+			this.encryptTargetTextbox.Multiline = true;
+			this.encryptTargetTextbox.Name = "encryptTargetTextbox";
+			this.encryptTargetTextbox.Size = new System.Drawing.Size(350, 97);
+			this.encryptTargetTextbox.TabIndex = 1;
 			// 
 			// encryptSourceTextbox
 			// 
@@ -295,49 +265,20 @@
 			// 
 			// decryptTab
 			// 
-			this.decryptTab.Controls.Add(this.groupBox1);
 			this.decryptTab.Controls.Add(this.groupBox2);
 			this.decryptTab.Location = new System.Drawing.Point(4, 34);
 			this.decryptTab.Name = "decryptTab";
 			this.decryptTab.Padding = new System.Windows.Forms.Padding(3);
-			this.decryptTab.Size = new System.Drawing.Size(774, 486);
+			this.decryptTab.Size = new System.Drawing.Size(774, 382);
 			this.decryptTab.TabIndex = 1;
 			this.decryptTab.Text = "Дешифрование";
 			this.decryptTab.UseVisualStyleBackColor = true;
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Controls.Add(this.textBox3);
-			this.groupBox1.Controls.Add(this.checkBox2);
-			this.groupBox1.Location = new System.Drawing.Point(15, 17);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(358, 102);
-			this.groupBox1.TabIndex = 13;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Настройки";
-			// 
-			// textBox3
-			// 
-			this.textBox3.Location = new System.Drawing.Point(22, 53);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(308, 20);
-			this.textBox3.TabIndex = 7;
-			// 
-			// checkBox2
-			// 
-			this.checkBox2.AutoSize = true;
-			this.checkBox2.Location = new System.Drawing.Point(22, 30);
-			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(227, 17);
-			this.checkBox2.TabIndex = 9;
-			this.checkBox2.Text = "Использовать свой ключь шифрования";
-			this.checkBox2.UseVisualStyleBackColor = true;
 			// 
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.groupBox5);
 			this.groupBox2.Controls.Add(this.groupBox6);
-			this.groupBox2.Location = new System.Drawing.Point(15, 127);
+			this.groupBox2.Location = new System.Drawing.Point(10, 10);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(751, 359);
 			this.groupBox2.TabIndex = 12;
@@ -346,43 +287,44 @@
 			// 
 			// groupBox5
 			// 
-			this.groupBox5.Controls.Add(this.button1);
-			this.groupBox5.Controls.Add(this.button2);
-			this.groupBox5.Controls.Add(this.button3);
-			this.groupBox5.Controls.Add(this.textBox4);
+			this.groupBox5.Controls.Add(this.dencryptStreamButton);
+			this.groupBox5.Controls.Add(this.searchSourceFileToDencryptButton);
+			this.groupBox5.Controls.Add(this.pathToDecryptedFileTextBox);
 			this.groupBox5.Controls.Add(this.label4);
-			this.groupBox5.Location = new System.Drawing.Point(388, 28);
+			this.groupBox5.Location = new System.Drawing.Point(388, 26);
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.Padding = new System.Windows.Forms.Padding(5);
-			this.groupBox5.Size = new System.Drawing.Size(359, 170);
+			this.groupBox5.Size = new System.Drawing.Size(359, 273);
 			this.groupBox5.TabIndex = 0;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "Из файла";
 			// 
-			// button2
+			// dencryptStreamButton
 			// 
-			this.button2.Location = new System.Drawing.Point(12, 65);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(109, 23);
-			this.button2.TabIndex = 3;
-			this.button2.Text = "Дешифровать";
-			this.button2.UseVisualStyleBackColor = true;
+			this.dencryptStreamButton.Location = new System.Drawing.Point(12, 65);
+			this.dencryptStreamButton.Name = "dencryptStreamButton";
+			this.dencryptStreamButton.Size = new System.Drawing.Size(109, 23);
+			this.dencryptStreamButton.TabIndex = 3;
+			this.dencryptStreamButton.Text = "Дешифровать";
+			this.dencryptStreamButton.UseVisualStyleBackColor = true;
+			this.dencryptStreamButton.Click += new System.EventHandler(this.DecryptStream);
 			// 
-			// button3
+			// searchSourceFileToDencryptButton
 			// 
-			this.button3.Image = global::OTP.Window.Properties.Resources.search;
-			this.button3.Location = new System.Drawing.Point(323, 37);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(28, 23);
-			this.button3.TabIndex = 2;
-			this.button3.UseVisualStyleBackColor = true;
+			this.searchSourceFileToDencryptButton.Image = global::OTP.Window.Properties.Resources.search;
+			this.searchSourceFileToDencryptButton.Location = new System.Drawing.Point(323, 37);
+			this.searchSourceFileToDencryptButton.Name = "searchSourceFileToDencryptButton";
+			this.searchSourceFileToDencryptButton.Size = new System.Drawing.Size(28, 23);
+			this.searchSourceFileToDencryptButton.TabIndex = 2;
+			this.searchSourceFileToDencryptButton.UseVisualStyleBackColor = true;
+			this.searchSourceFileToDencryptButton.Click += new System.EventHandler(this.SearchTargetFileToDecrypt);
 			// 
-			// textBox4
+			// pathToDencryptedFileTextBox
 			// 
-			this.textBox4.Location = new System.Drawing.Point(11, 39);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(304, 20);
-			this.textBox4.TabIndex = 1;
+			this.pathToDecryptedFileTextBox.Location = new System.Drawing.Point(11, 39);
+			this.pathToDecryptedFileTextBox.Name = "pathToDencryptedFileTextBox";
+			this.pathToDecryptedFileTextBox.Size = new System.Drawing.Size(304, 20);
+			this.pathToDecryptedFileTextBox.TabIndex = 1;
 			// 
 			// label4
 			// 
@@ -400,7 +342,7 @@
 			this.groupBox6.Controls.Add(this.label6);
 			this.groupBox6.Controls.Add(this.decryptedTextbox);
 			this.groupBox6.Controls.Add(this.decryptSourceTextbox);
-			this.groupBox6.Location = new System.Drawing.Point(6, 28);
+			this.groupBox6.Location = new System.Drawing.Point(6, 26);
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.Size = new System.Drawing.Size(376, 312);
 			this.groupBox6.TabIndex = 1;
@@ -415,7 +357,7 @@
 			this.decryptButton.TabIndex = 4;
 			this.decryptButton.Text = "Дешифровать";
 			this.decryptButton.UseVisualStyleBackColor = true;
-			this.decryptButton.Click += new System.EventHandler(this.button4_Click);
+			this.decryptButton.Click += new System.EventHandler(this.DecryptFormInput);
 			// 
 			// label5
 			// 
@@ -451,20 +393,69 @@
 			this.decryptSourceTextbox.Size = new System.Drawing.Size(349, 97);
 			this.decryptSourceTextbox.TabIndex = 0;
 			// 
-			// button1
+			// openFileDialogEncrypt
 			// 
-			this.button1.Location = new System.Drawing.Point(12, 116);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(339, 23);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "Получить зашифрованный текст";
-			this.button1.UseVisualStyleBackColor = true;
+			this.openFileDialogEncrypt.FileName = "openFileDialog1";
+			this.openFileDialogEncrypt.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+			this.openFileDialogEncrypt.FilterIndex = 2;
+			this.openFileDialogEncrypt.InitialDirectory = "c:\\\\";
+			this.openFileDialogEncrypt.RestoreDirectory = true;
+			// 
+			// saveFileDialogEncrypt
+			// 
+			this.saveFileDialogEncrypt.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+			this.saveFileDialogEncrypt.FilterIndex = 2;
+			// 
+			// openFileDialogDecrypt
+			// 
+			this.openFileDialogDecrypt.FileName = "openFileDialog1";
+			this.openFileDialogDecrypt.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+			this.openFileDialogDecrypt.FilterIndex = 2;
+			this.openFileDialogDecrypt.InitialDirectory = "c:\\\\";
+			this.openFileDialogDecrypt.RestoreDirectory = true;
+			// 
+			// saveFileDialogDecrypt
+			// 
+			this.saveFileDialogDecrypt.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+			this.saveFileDialogDecrypt.FilterIndex = 2;
+			this.saveFileDialogDecrypt.RestoreDirectory = true;
+			// 
+			// groupBox4
+			// 
+			this.groupBox4.Controls.Add(this.keyTextBox);
+			this.groupBox4.Controls.Add(this.ownEncryptKeyCheckBox);
+			this.groupBox4.Location = new System.Drawing.Point(18, 37);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(778, 102);
+			this.groupBox4.TabIndex = 12;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Настройки";
+			// 
+			// keyTextBox
+			// 
+			this.keyTextBox.Location = new System.Drawing.Point(22, 53);
+			this.keyTextBox.Name = "keyTextBox";
+			this.keyTextBox.ReadOnly = true;
+			this.keyTextBox.Size = new System.Drawing.Size(308, 20);
+			this.keyTextBox.TabIndex = 7;
+			// 
+			// ownEncryptKeyCheckBox
+			// 
+			this.ownEncryptKeyCheckBox.AutoSize = true;
+			this.ownEncryptKeyCheckBox.Location = new System.Drawing.Point(22, 30);
+			this.ownEncryptKeyCheckBox.Name = "ownEncryptKeyCheckBox";
+			this.ownEncryptKeyCheckBox.Size = new System.Drawing.Size(227, 17);
+			this.ownEncryptKeyCheckBox.TabIndex = 9;
+			this.ownEncryptKeyCheckBox.Text = "Использовать свой ключь шифрования";
+			this.ownEncryptKeyCheckBox.UseVisualStyleBackColor = true;
+			this.ownEncryptKeyCheckBox.CheckedChanged += new System.EventHandler(this.ShouldUseOwnKey);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(805, 566);
+			this.ClientSize = new System.Drawing.Size(817, 566);
+			this.Controls.Add(this.groupBox4);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.mainMenuStrip);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -478,21 +469,19 @@
 			this.mainMenuStrip.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
 			this.encryptTab.ResumeLayout(false);
-			this.groupBox4.ResumeLayout(false);
-			this.groupBox4.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
 			this.importFromFileGroupBox.ResumeLayout(false);
 			this.importFromFileGroupBox.PerformLayout();
 			this.realTimeGroupBox.ResumeLayout(false);
 			this.realTimeGroupBox.PerformLayout();
 			this.decryptTab.ResumeLayout(false);
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox5.PerformLayout();
 			this.groupBox6.ResumeLayout(false);
 			this.groupBox6.PerformLayout();
+			this.groupBox4.ResumeLayout(false);
+			this.groupBox4.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -510,24 +499,21 @@
 		private System.Windows.Forms.TabPage decryptTab;
 		private System.Windows.Forms.GroupBox realTimeGroupBox;
 		private System.Windows.Forms.GroupBox importFromFileGroupBox;
-		private System.Windows.Forms.Button searchSourceFileButton;
-		private System.Windows.Forms.TextBox pathToSourceFileTextBox;
+		private System.Windows.Forms.Button searchSourceFileToEncryptButton;
+		private System.Windows.Forms.TextBox pathToEncryptedFileTextBox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button encryptStreamButton;
-		private System.Windows.Forms.Button encryptButton;
+		private System.Windows.Forms.Button encryptFromInputButton;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox encryptedTextbox;
+		private System.Windows.Forms.TextBox encryptTargetTextbox;
 		private System.Windows.Forms.TextBox encryptSourceTextbox;
-		private System.Windows.Forms.GroupBox groupBox4;
-		private System.Windows.Forms.TextBox ownKeyTextBox;
-		private System.Windows.Forms.CheckBox useOwnKey;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.GroupBox groupBox5;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.Button dencryptStreamButton;
+		private System.Windows.Forms.Button searchSourceFileToDencryptButton;
+		private System.Windows.Forms.TextBox pathToDecryptedFileTextBox;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.Button decryptButton;
@@ -535,10 +521,13 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox decryptedTextbox;
 		private System.Windows.Forms.TextBox decryptSourceTextbox;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.TextBox textBox3;
-		private System.Windows.Forms.CheckBox checkBox2;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.OpenFileDialog openFileDialogEncrypt;
+		private System.Windows.Forms.SaveFileDialog saveFileDialogEncrypt;
+		private System.Windows.Forms.OpenFileDialog openFileDialogDecrypt;
+		private System.Windows.Forms.SaveFileDialog saveFileDialogDecrypt;
+		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.TextBox keyTextBox;
+		private System.Windows.Forms.CheckBox ownEncryptKeyCheckBox;
 	}
 }
 

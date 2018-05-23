@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -44,6 +45,30 @@ namespace OTP.Cryptographer.Model
 				plainTextBytes.Take(NonceLength).ToArray());
 
 			return _encoding.GetString(encryptedText.ToArray());
+		}
+
+		public static string EncryptStream(string key, string pathToFile)
+		{
+			var encryptedText = string.Empty;
+
+			using (var streamReader = new StreamReader(pathToFile))
+			{
+				encryptedText = Encrypt(key, streamReader.ReadToEnd());
+			}
+
+			return encryptedText;
+		}
+
+		public static string DecryptStream(string key, string pathToFile)
+		{
+			var decryptedText = string.Empty;
+
+			using (var streamReader = new StreamReader(pathToFile))
+			{
+				decryptedText = Crypto.Decrypt(key, streamReader.ReadToEnd());
+			}
+
+			return decryptedText;
 		}
 
 		private static IEnumerable<byte> XorCounterModeEncryptDecrypt(byte[] key, byte[] text, byte[] nonce)
