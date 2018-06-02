@@ -1,30 +1,31 @@
 ﻿using OTP.Cryptographer.Model;
 using System;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace OTP.Window
 {
-	public partial class MainForm : Form
+	public partial class CryptographerForm : Form
 	{
 		private readonly int KeyLength;
+		private Controller cryptographerController;
 
-		public MainForm()
+		public CryptographerForm(ICrypto cryptographer)
 		{
 			InitializeComponent();
 
-			KeyLength = new Random().Next(10, 100);
+			cryptographerController = new Controller(cryptographer);
+			KeyLength = new Random().Next(256);
 		}
 
 		private void EncryptFormInput(object sender, EventArgs e)
 		{
 			var key = ownEncryptKeyCheckBox.Checked
 				? keyTextBox.Text
-				: Crypto.GenerateEncryptionKey(KeyLength);
+				: cryptographerController.Cryptographer.GenerateEncryptionKey(KeyLength);
 
 			encryptTargetTextbox.Text =
-				Crypto.Encrypt(key, encryptSourceTextbox.Text);
+				cryptographerController.Cryptographer.Encrypt(key, encryptSourceTextbox.Text);
 
 			keyTextBox.Text = key;
 		}
@@ -34,7 +35,7 @@ namespace OTP.Window
 			var key = keyTextBox.Text;
 
 			decryptedTextbox.Text =
-				Crypto.Decrypt(key, decryptSourceTextbox.Text);
+				cryptographerController.Cryptographer.Decrypt(key, decryptSourceTextbox.Text);
 		}
 
 		private void SearchSourceFileToEncrypt(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace OTP.Window
 		{
 			var key = ownEncryptKeyCheckBox.Checked
 				? keyTextBox.Text
-				: Crypto.GenerateEncryptionKey(5);
+				: cryptographerController.Cryptographer.GenerateEncryptionKey(256);
 
 			keyTextBox.Text = key;
 
@@ -72,7 +73,7 @@ namespace OTP.Window
 			{
 				File.WriteAllText(
 					saveFileDialogEncrypt.FileName,
-					Crypto.EncryptStream(key, pathToEncryptedFileTextBox.Text));
+					cryptographerController.Cryptographer.EncryptStream(key, pathToEncryptedFileTextBox.Text));
 			}
 		}
 
@@ -84,8 +85,15 @@ namespace OTP.Window
 			{
 				File.WriteAllText(
 					saveFileDialogDecrypt.FileName,
-					Crypto.DecryptStream(key, pathToDecryptedFileTextBox.Text));
+					cryptographerController.Cryptographer.DecryptStream(key, pathToDecryptedFileTextBox.Text));
 			}
+		}
+
+		private bool ValidateUserKeyInput(string userKey)
+		{
+			return !string.IsNullOrWhiteSpace(userKey) &&
+				userKey.Length >= 32 &&
+				userKey.Length <= 256;
 		}
 	}
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using OTP.Cryptographer.Model;
+
 namespace OTP.Window
 {
 	static class Program
@@ -10,7 +12,7 @@ namespace OTP.Window
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new MainForm());
+			Application.Run(new CryptographerForm(new Crypto()));
 		}
 	}
 }

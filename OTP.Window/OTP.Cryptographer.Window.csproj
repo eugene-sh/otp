@@ -48,25 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\EncryptDialog.cs">
+    <Compile Include="Controller.cs" />
+    <Compile Include="Forms\CryptographerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EncryptDialog.Designer.cs">
-      <DependentUpon>EncryptDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\CryptographerForm.Designer.cs">
+      <DependentUpon>CryptographerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\EncryptDialog.resx">
-      <DependentUpon>EncryptDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CryptographerForm.resx">
+      <DependentUpon>CryptographerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

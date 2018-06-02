@@ -1,21 +1,43 @@
-﻿using System;
+﻿using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace OTP.Comparer
 {
-	public class TextBaseComparer
+	public static class TextBaseComparer
 	{
-		public string Data { get; set; }
-		public string Hash { get; set; }
-
-		public TextBaseComparer(string text)
+		public static bool Compare(string sourceText, string targetText)
 		{
-			Data = text;
-			Hash = CalculateHash(text);
+			return CalculateHash(sourceText) == CalculateHash(targetText);
 		}
 
-		private string CalculateHash(string text)
+		public static bool CompareFromStream(string pathToSourceText, string pathTotargetText)
+		{
+			var sourceTextHash = string.Empty;
+			var targetTextHash = string.Empty;
+
+			using (var sourceTextReader = File.OpenRead(pathToSourceText))
+			using (var targetTextReader = File.OpenRead(pathTotargetText))
+			{
+				sourceTextHash = CalculateHash(sourceTextReader);
+				targetTextHash = CalculateHash(targetTextReader);
+
+			}
+
+			return sourceTextHash == targetTextHash;
+		}
+
+		private static string CalculateHash(Stream text)
+		{
+			using (var md5 = MD5.Create())
+			{
+				byte[] hash = md5.ComputeHash(text);
+
+				return ConvertHashToString(hash);
+			}
+		}
+
+		private static string CalculateHash(string text)
 		{
 			using (var md5 = MD5.Create())
 			{
@@ -26,7 +48,7 @@ namespace OTP.Comparer
 			}
 		}
 
-		private string ConvertHashToString(byte[] hash)
+		private static string ConvertHashToString(byte[] hash)
 		{
 			var hashStringBuilder = new StringBuilder();
 
@@ -36,31 +58,6 @@ namespace OTP.Comparer
 			}
 
 			return hashStringBuilder.ToString();
-		}
-
-		public override bool Equals(object obj)
-		{
-			if (obj == null)
-			{
-				throw new ArgumentNullException(nameof(obj));
-			}
-
-			return base.Equals(obj) && HasEquals(obj as TextBaseComparer);
-		}
-
-		private bool HasEquals(TextBaseComparer text)
-		{
-			return MD5.Equals(text.Hash, Hash);
-		}
-
-		public override int GetHashCode()
-		{
-			return base.GetHashCode();
-		}
-
-		public override string ToString()
-		{
-			return base.ToString();
 		}
 	}
 }

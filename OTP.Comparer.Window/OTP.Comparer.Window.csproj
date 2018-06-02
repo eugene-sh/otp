@@ -88,5 +88,11 @@
   <ItemGroup>
     <Content Include="cpm-logo.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OTP.Comparer\OTP.Comparer.csproj">
+      <Project>{66e2c6b6-3957-41a1-acb9-bea4c235581c}</Project>
+      <Name>OTP.Comparer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿namespace OTP.Window
 {
-	partial class MainForm
+	partial class CryptographerForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CryptographerForm));
 			this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -319,10 +319,10 @@
 			this.searchSourceFileToDencryptButton.UseVisualStyleBackColor = true;
 			this.searchSourceFileToDencryptButton.Click += new System.EventHandler(this.SearchTargetFileToDecrypt);
 			// 
-			// pathToDencryptedFileTextBox
+			// pathToDecryptedFileTextBox
 			// 
 			this.pathToDecryptedFileTextBox.Location = new System.Drawing.Point(11, 39);
-			this.pathToDecryptedFileTextBox.Name = "pathToDencryptedFileTextBox";
+			this.pathToDecryptedFileTextBox.Name = "pathToDecryptedFileTextBox";
 			this.pathToDecryptedFileTextBox.Size = new System.Drawing.Size(304, 20);
 			this.pathToDecryptedFileTextBox.TabIndex = 1;
 			// 
@@ -434,9 +434,10 @@
 			// keyTextBox
 			// 
 			this.keyTextBox.Location = new System.Drawing.Point(22, 53);
+			this.keyTextBox.MaxLength = 256;
 			this.keyTextBox.Name = "keyTextBox";
 			this.keyTextBox.ReadOnly = true;
-			this.keyTextBox.Size = new System.Drawing.Size(308, 20);
+			this.keyTextBox.Size = new System.Drawing.Size(739, 20);
 			this.keyTextBox.TabIndex = 7;
 			// 
 			// ownEncryptKeyCheckBox
@@ -450,7 +451,7 @@
 			this.ownEncryptKeyCheckBox.UseVisualStyleBackColor = true;
 			this.ownEncryptKeyCheckBox.CheckedChanged += new System.EventHandler(this.ShouldUseOwnKey);
 			// 
-			// MainForm
+			// CryptographerForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -462,7 +463,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.mainMenuStrip;
 			this.MaximizeBox = false;
-			this.Name = "MainForm";
+			this.Name = "CryptographerForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Cryptographer";
 			this.mainMenuStrip.ResumeLayout(false);

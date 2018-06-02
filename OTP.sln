@@ -3,35 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{545A3A92-72DF-4FE7-BD28-7D4C3B8EC4B1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Tests", "Utilities.Test\Utilities.Tests.csproj", "{1A490547-6188-4785-8934-495D9A263157}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentations", "Documentations", "{677F23FA-7BF2-4607-BCA5-F0860E2B5CB3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{3FD9220C-E08E-4CA7-873C-C556B70C12D2}"
-	ProjectSection(SolutionItems) = preProject
-		Terms.md = Terms.md
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP.Cryptographer.Window", "OTP.Window\OTP.Cryptographer.Window.csproj", "{9DFD47F3-14B3-4064-A75C-78F922346102}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Todo", "Todo", "{21655373-849F-4457-9F3B-C4521570DD8D}"
-	ProjectSection(SolutionItems) = preProject
-		Window.md = Window.md
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comparer", "Comparer", "{2F03A9A6-005C-4E1C-BC8D-F6F1AE83F439}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP.Comparer", "OTP.Comparer\OTP.Comparer.csproj", "{66E2C6B6-3957-41A1-ACB9-BEA4C235581C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP.Comparer.Tests", "OTP.Comparer.Test\OTP.Comparer.Tests.csproj", "{858FB081-3BA4-451F-90FA-491BE17A1564}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP.Cryptographer.Model", "OTP.Cryptographer.Model\OTP.Cryptographer.Model.csproj", "{78791920-5BB0-4085-825A-F0AE0C76CFDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cryptographer", "Cryptographer", "{CD9559F5-43F2-4509-A575-FFF53447B50A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP.Cryptographer.Tests", "OTP.Cryptographer.Tests\OTP.Cryptographer.Tests.csproj", "{FB9A9711-17FC-43AC-B82D-9521B74EC594}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP.Comparer.Window", "OTP.Comparer.Window\OTP.Comparer.Window.csproj", "{302669DB-644B-492D-B719-94FF67BAC39B}"
 EndProject
@@ -41,14 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{545A3A92-72DF-4FE7-BD28-7D4C3B8EC4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{545A3A92-72DF-4FE7-BD28-7D4C3B8EC4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{545A3A92-72DF-4FE7-BD28-7D4C3B8EC4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{545A3A92-72DF-4FE7-BD28-7D4C3B8EC4B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A490547-6188-4785-8934-495D9A263157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A490547-6188-4785-8934-495D9A263157}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A490547-6188-4785-8934-495D9A263157}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A490547-6188-4785-8934-495D9A263157}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9DFD47F3-14B3-4064-A75C-78F922346102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9DFD47F3-14B3-4064-A75C-78F922346102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DFD47F3-14B3-4064-A75C-78F922346102}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,18 +29,10 @@ Global
 		{66E2C6B6-3957-41A1-ACB9-BEA4C235581C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66E2C6B6-3957-41A1-ACB9-BEA4C235581C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66E2C6B6-3957-41A1-ACB9-BEA4C235581C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{858FB081-3BA4-451F-90FA-491BE17A1564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{858FB081-3BA4-451F-90FA-491BE17A1564}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{858FB081-3BA4-451F-90FA-491BE17A1564}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{858FB081-3BA4-451F-90FA-491BE17A1564}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78791920-5BB0-4085-825A-F0AE0C76CFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78791920-5BB0-4085-825A-F0AE0C76CFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78791920-5BB0-4085-825A-F0AE0C76CFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78791920-5BB0-4085-825A-F0AE0C76CFDA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB9A9711-17FC-43AC-B82D-9521B74EC594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB9A9711-17FC-43AC-B82D-9521B74EC594}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB9A9711-17FC-43AC-B82D-9521B74EC594}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB9A9711-17FC-43AC-B82D-9521B74EC594}.Release|Any CPU.Build.0 = Release|Any CPU
 		{302669DB-644B-492D-B719-94FF67BAC39B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{302669DB-644B-492D-B719-94FF67BAC39B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{302669DB-644B-492D-B719-94FF67BAC39B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -78,13 +42,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3FD9220C-E08E-4CA7-873C-C556B70C12D2} = {677F23FA-7BF2-4607-BCA5-F0860E2B5CB3}
 		{9DFD47F3-14B3-4064-A75C-78F922346102} = {CD9559F5-43F2-4509-A575-FFF53447B50A}
-		{21655373-849F-4457-9F3B-C4521570DD8D} = {677F23FA-7BF2-4607-BCA5-F0860E2B5CB3}
 		{66E2C6B6-3957-41A1-ACB9-BEA4C235581C} = {2F03A9A6-005C-4E1C-BC8D-F6F1AE83F439}
-		{858FB081-3BA4-451F-90FA-491BE17A1564} = {2F03A9A6-005C-4E1C-BC8D-F6F1AE83F439}
 		{78791920-5BB0-4085-825A-F0AE0C76CFDA} = {CD9559F5-43F2-4509-A575-FFF53447B50A}
-		{FB9A9711-17FC-43AC-B82D-9521B74EC594} = {CD9559F5-43F2-4509-A575-FFF53447B50A}
 		{302669DB-644B-492D-B719-94FF67BAC39B} = {2F03A9A6-005C-4E1C-BC8D-F6F1AE83F439}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

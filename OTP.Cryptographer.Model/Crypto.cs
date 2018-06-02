@@ -7,12 +7,16 @@ using System.Text;
 
 namespace OTP.Cryptographer.Model
 {
-	public static class Crypto
+	public class Crypto : ICrypto
 	{
-		private const int NonceLength = 4;
-		private static Encoding _encoding => Encoding.GetEncoding(1251);
+		public const int MinKeyLength = 32;
+		public const int MaxKeyLength = 256;
 
-		public static string Encrypt(string key, string plainText)
+		private const int NonceLength = 4;
+
+		private Encoding _encoding => Encoding.GetEncoding(1251);
+
+		public string Encrypt(string key, string plainText)
 		{
 			if (string.IsNullOrEmpty(key))
 				throw new ArgumentNullException(nameof(key));
@@ -29,7 +33,7 @@ namespace OTP.Cryptographer.Model
 			return _encoding.GetString(decryptedText.ToArray());
 		}
 
-		public static string Decrypt(string key, string plainText)
+		public string Decrypt(string key, string plainText)
 		{
 			if (string.IsNullOrEmpty(key))
 				throw new ArgumentNullException(nameof(key));
@@ -47,7 +51,7 @@ namespace OTP.Cryptographer.Model
 			return _encoding.GetString(encryptedText.ToArray());
 		}
 
-		public static string EncryptStream(string key, string pathToFile)
+		public string EncryptStream(string key, string pathToFile)
 		{
 			var encryptedText = string.Empty;
 
@@ -59,19 +63,19 @@ namespace OTP.Cryptographer.Model
 			return encryptedText;
 		}
 
-		public static string DecryptStream(string key, string pathToFile)
+		public string DecryptStream(string key, string pathToFile)
 		{
 			var decryptedText = string.Empty;
 
 			using (var streamReader = new StreamReader(pathToFile))
 			{
-				decryptedText = Crypto.Decrypt(key, streamReader.ReadToEnd());
+				decryptedText = Decrypt(key, streamReader.ReadToEnd());
 			}
 
 			return decryptedText;
 		}
 
-		private static IEnumerable<byte> XorCounterModeEncryptDecrypt(byte[] key, byte[] text, byte[] nonce)
+		private IEnumerable<byte> XorCounterModeEncryptDecrypt(byte[] key, byte[] text, byte[] nonce)
 		{
 			var roundIndex = 0;
 			byte[] roundGamma = null;
@@ -102,7 +106,7 @@ namespace OTP.Cryptographer.Model
 			}
 		}
 
-		private static byte[] GenerateNonce(int nonceLength)
+		private byte[] GenerateNonce(int nonceLength)
 		{
 			byte[] nonce = new byte[nonceLength];
 
@@ -114,7 +118,7 @@ namespace OTP.Cryptographer.Model
 			return nonce;
 		}
 
-		public static string GenerateEncryptionKey(int keyLength)
+		public string GenerateEncryptionKey(int keyLength)
 		{
 			var key = new byte[keyLength];
 			var encoding = Encoding.GetEncoding(1251);
