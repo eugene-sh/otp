@@ -128,7 +128,7 @@
 			this.searchTargetTextButton.Size = new System.Drawing.Size(28, 23);
 			this.searchTargetTextButton.TabIndex = 10;
 			this.searchTargetTextButton.UseVisualStyleBackColor = true;
-			this.searchTargetTextButton.Click += new System.EventHandler(this.searchTargetTextButton_Click);
+			this.searchTargetTextButton.Click += new System.EventHandler(this.SearchTargetTextButtonClick);
 			// 
 			// pathToTargetTextBox
 			// 
@@ -154,7 +154,7 @@
 			this.compareFromFileButton.TabIndex = 7;
 			this.compareFromFileButton.Text = "Сравнить";
 			this.compareFromFileButton.UseVisualStyleBackColor = true;
-			this.compareFromFileButton.Click += new System.EventHandler(this.compareFromFileButton_Click);
+			this.compareFromFileButton.Click += new System.EventHandler(this.CompareFromFileButtonClick);
 			// 
 			// searchSourceTextButton
 			// 
@@ -164,7 +164,7 @@
 			this.searchSourceTextButton.Size = new System.Drawing.Size(28, 23);
 			this.searchSourceTextButton.TabIndex = 6;
 			this.searchSourceTextButton.UseVisualStyleBackColor = true;
-			this.searchSourceTextButton.Click += new System.EventHandler(this.searchSourceTextButton_Click);
+			this.searchSourceTextButton.Click += new System.EventHandler(this.SearchSourceTextButtonClick);
 			// 
 			// pathToSourceFileTextBox
 			// 
@@ -203,7 +203,7 @@
 			this.compareFromInput.TabIndex = 12;
 			this.compareFromInput.Text = "Сравнить";
 			this.compareFromInput.UseVisualStyleBackColor = true;
-			this.compareFromInput.Click += new System.EventHandler(this.compareFromInput_Click);
+			this.compareFromInput.Click += new System.EventHandler(this.CompareFromInputClick);
 			// 
 			// label4
 			// 

@@ -7,22 +7,22 @@ namespace OTP.Window
 {
 	public partial class CryptographerForm : Form
 	{
-		private readonly int KeyLength;
-		private Controller cryptographerController;
+		private readonly int _keyLength;
+		private readonly Controller cryptographerController;
 
 		public CryptographerForm(ICrypto cryptographer)
 		{
 			InitializeComponent();
 
 			cryptographerController = new Controller(cryptographer);
-			KeyLength = new Random().Next(256);
+			_keyLength = new Random().Next(256);
 		}
 
 		private void EncryptFormInput(object sender, EventArgs e)
 		{
 			var key = ownEncryptKeyCheckBox.Checked
 				? keyTextBox.Text
-				: cryptographerController.Cryptographer.GenerateEncryptionKey(KeyLength);
+				: cryptographerController.Cryptographer.GenerateEncryptionKey(_keyLength);
 
 			encryptTargetTextbox.Text =
 				cryptographerController.Cryptographer.Encrypt(key, encryptSourceTextbox.Text);
@@ -88,12 +88,5 @@ namespace OTP.Window
 					cryptographerController.Cryptographer.DecryptStream(key, pathToDecryptedFileTextBox.Text));
 			}
 		}
-
-		private bool ValidateUserKeyInput(string userKey)
-		{
-			return !string.IsNullOrWhiteSpace(userKey) &&
-				userKey.Length >= 32 &&
-				userKey.Length <= 256;
-		}
-	}
+    }
 }

@@ -11,18 +11,17 @@ namespace OTP.Comparer
 			return CalculateHash(sourceText) == CalculateHash(targetText);
 		}
 
-		public static bool CompareFromStream(string pathToSourceText, string pathTotargetText)
+		public static bool CompareFromStream(string pathToSourceText, string pathToTargetText)
 		{
-			var sourceTextHash = string.Empty;
-			var targetTextHash = string.Empty;
+			string sourceTextHash;
+			string targetTextHash;
 
 			using (var sourceTextReader = File.OpenRead(pathToSourceText))
-			using (var targetTextReader = File.OpenRead(pathTotargetText))
+			using (var targetTextReader = File.OpenRead(pathToTargetText))
 			{
 				sourceTextHash = CalculateHash(sourceTextReader);
 				targetTextHash = CalculateHash(targetTextReader);
-
-			}
+            }
 
 			return sourceTextHash == targetTextHash;
 		}
@@ -33,7 +32,7 @@ namespace OTP.Comparer
 			{
 				byte[] hash = md5.ComputeHash(text);
 
-				return ConvertHashToString(hash);
+                return ConvertHashToString(hash);
 			}
 		}
 
@@ -44,7 +43,7 @@ namespace OTP.Comparer
 				byte[] inputBytes = Encoding.ASCII.GetBytes(text);
 				byte[] hash = md5.ComputeHash(inputBytes);
 
-				return ConvertHashToString(hash);
+                return ConvertHashToString(hash);
 			}
 		}
 
@@ -52,12 +51,10 @@ namespace OTP.Comparer
 		{
 			var hashStringBuilder = new StringBuilder();
 
-			for (int i = 0; i < hash.Length; i++)
-			{
-				hashStringBuilder.Append(hash[i].ToString("X2"));
-			}
+			foreach (var hashItem in hash)
+                hashStringBuilder.Append(hashItem.ToString("X2"));
 
-			return hashStringBuilder.ToString();
+            return hashStringBuilder.ToString();
 		}
 	}
 }

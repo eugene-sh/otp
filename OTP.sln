@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP.Cryptographer.Window", "OTP.Window\OTP.Cryptographer.Window.csproj", "{9DFD47F3-14B3-4064-A75C-78F922346102}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP.Cryptographer.Window", "OTP.Cryptographer.Window\OTP.Cryptographer.Window.csproj", "{9DFD47F3-14B3-4064-A75C-78F922346102}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comparer", "Comparer", "{2F03A9A6-005C-4E1C-BC8D-F6F1AE83F439}"
 EndProject

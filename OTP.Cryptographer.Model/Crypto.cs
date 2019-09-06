@@ -9,9 +9,6 @@ namespace OTP.Cryptographer.Model
 {
 	public class Crypto : ICrypto
 	{
-		public const int MinKeyLength = 32;
-		public const int MaxKeyLength = 256;
-
 		private const int NonceLength = 4;
 
 		private Encoding _encoding => Encoding.GetEncoding(1251);
@@ -53,27 +50,15 @@ namespace OTP.Cryptographer.Model
 
 		public string EncryptStream(string key, string pathToFile)
 		{
-			var encryptedText = string.Empty;
-
 			using (var streamReader = new StreamReader(pathToFile))
-			{
-				encryptedText = Encrypt(key, streamReader.ReadToEnd());
-			}
-
-			return encryptedText;
+                return Encrypt(key, streamReader.ReadToEnd());
 		}
 
 		public string DecryptStream(string key, string pathToFile)
 		{
-			var decryptedText = string.Empty;
-
 			using (var streamReader = new StreamReader(pathToFile))
-			{
-				decryptedText = Decrypt(key, streamReader.ReadToEnd());
-			}
-
-			return decryptedText;
-		}
+                return Decrypt(key, streamReader.ReadToEnd());
+        }
 
 		private IEnumerable<byte> XorCounterModeEncryptDecrypt(byte[] key, byte[] text, byte[] nonce)
 		{
@@ -86,11 +71,9 @@ namespace OTP.Cryptographer.Model
 				if (gammaIndex == 0)
 				{
 					var counterBlock = nonce.Concat(BitConverter.GetBytes(roundIndex)).ToArray();
-					using (var hmacSHA = new HMACSHA512(key))
-					{
-						roundGamma = hmacSHA.ComputeHash(counterBlock);
-					}
-				}
+                    using (var hmacSHA = new HMACSHA512(key))
+                        roundGamma = hmacSHA.ComputeHash(counterBlock);
+                }
 
 				yield return (byte)(textItem ^ roundGamma[gammaIndex]);
 
@@ -108,15 +91,14 @@ namespace OTP.Cryptographer.Model
 
 		private byte[] GenerateNonce(int nonceLength)
 		{
-			byte[] nonce = new byte[nonceLength];
-
-			using (var randomGenerator = new RNGCryptoServiceProvider())
+            using (var randomGenerator = new RNGCryptoServiceProvider())
 			{
-				randomGenerator.GetBytes(nonce);
-			}
+                byte[] nonce = new byte[nonceLength];
+                randomGenerator.GetBytes(nonce);
 
-			return nonce;
-		}
+                return nonce;
+            }
+        }
 
 		public string GenerateEncryptionKey(int keyLength)
 		{
